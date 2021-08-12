@@ -1,5 +1,6 @@
 # Easy Peasy
-Category: Cryptography
+Category: Cryptography 
+
 AUTHOR: MADSTACKS 
 
 ## Beginning
