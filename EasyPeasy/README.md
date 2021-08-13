@@ -110,7 +110,7 @@ r.recvlineS()
 log.success("The flag: {}".format(unhex(r.recvlineS())))
 ```
 
-The magic starts here, we start by sending ``` 'A' * (50 000 - 32) ``` to get our input equal to the KEY_LENGTH and then we send back our flag 
+The magic starts here, we start by sending ``` 'A' * (50 000 - 32) ``` to get our input equal to the KEY_LENGTH and then we send back our flag. The flag will finally be XOR with the exact same key used previously which give us the uncrypted flag !
 ```
 Flag : b'5541103a246e415e036c4c5f0e3d415a513e4a560050644859536b4f57003d4c\n'
 [+] The flag: b'7f9da29f40499a98db220380a57746a4'
