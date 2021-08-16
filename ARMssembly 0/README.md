@@ -25,13 +25,13 @@ main:
         add     x0, x0, 8
         ldr     x0, [x0]
         bl      atoi
-        mov     w19, w0            ** w19 = 266134863 ** 
+        mov     w19, w0            # w19 = 266134863 
         ldr     x0, [x29, 32]
         add     x0, x0, 16
         ldr     x0, [x0]
         bl      atoi
-        mov     w1, w0             ** w1 = 1592237099 **
-        mov     w0, w19            ** w0 = 266134863 **
+        mov     w1, w0             # w1 = 1592237099 
+        mov     w0, w19            # w0 = 266134863 
         bl      func1
         mov     w1, w0
         adrp    x0, .LC0
@@ -76,7 +76,7 @@ Before talking about the cmp instruction i have to give a little explanation abo
 Each time you will see a "cmp" instruction it will compare the values next to. In our example w1 and w0, and it will do a little substraction of them. This substraction will turn on flags depends on the result. 
 
 ```
-N: Negative
+** N: Negative **
 
 The N flag is set by an instruction if the result is negative. In practice, N is set to the two's complement sign bit of the result (bit 31).
 
@@ -94,11 +94,11 @@ The V flag works the same as the C flag, but for signed operations. For example,
 
 
 ```
-* https://community.arm.com/developer/ip-products/processors/b/processors-ip-blog/posts/condition-codes-1-condition-flags-and-codes * 
+* https://community.arm.com/developer/ip-products/processors/b/processors-ip-blog/posts/condition-codes-1-condition-flags-and-codes 
 
 Of course they are not useless, so we will use these flags to see the result of our compare. 
 ```
-	cmp  w1, w0    cmp #266134863,#1592237099
+    cmp  w1, w0    cmp #266134863,#1592237099
     bls  .L2
 
 ```
@@ -127,7 +127,7 @@ Lot of scary things here but don't worry it's only a "return" function.
 So after that we are back to the main with w0 = w1 = 1592237099
 
 ```
-	mov w1, w0
+   mov w1, w0
     adrp x0, .LC0
     add x0, x0, :lo12:.LC0
     bl  printf
